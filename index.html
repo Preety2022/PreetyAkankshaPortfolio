@@ -1,152 +1,937 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preety Akanksha | Data Engineer</title>
+<meta name="description" content="Preety Akanksha | Python Backend Engineer and Senior Analyst specializing in Python, FastAPI, AWS, Data Engineering and Generative AI.">
+<title>Preety Akanksha | Python Backend Engineer</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
+:root {
+    --navy: #14243b;
+    --navy-light: #203b5c;
+    --blue: #3978b8;
+    --blue-light: #eaf2fa;
+    --teal: #239b91;
+    --text: #344256;
+    --muted: #718096;
+    --bg: #f4f7fb;
+    --white: #ffffff;
+    --border: #e5eaf0;
+    --shadow: 0 12px 35px rgba(20,36,59,0.06);
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
-    background: #f7f9fc;
-    color: #333;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
-    max-width: 900px;
+    width: min(1080px, 92%);
     margin: auto;
-    padding: 20px;
 }
 
-header {
-    text-align: center;
-    padding: 30px 0;
+/* Navigation */
+
+nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-h1 {
-    margin-bottom: 5px;
+.nav-inner {
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.subtitle {
-    color: #555;
-    font-weight: bold;
+.brand {
+    font-size: 18px;
+    font-weight: 750;
+    color: var(--navy);
+    letter-spacing: -0.4px;
 }
 
-.contact {
-    margin-top: 10px;
-    font-size: 14px;
+.brand span {
+    color: var(--blue);
 }
 
-section {
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color .2s;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+/* Hero */
+
+.hero {
+    background: linear-gradient(125deg, #14243b 0%, #203e60 65%, #245d75 100%);
+    color: white;
+    padding: 90px 0 85px;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 820px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #b9d9f4;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 58px);
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+    margin-bottom: 13px;
+}
+
+.hero h2 {
+    font-size: clamp(18px, 3vw, 25px);
+    font-weight: 500;
+    color: #c9dced;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    color: #d6e1ec;
+    max-width: 730px;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
     margin-top: 30px;
 }
 
-h2 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 21px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all .2s ease;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background: #dcecfb;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.55);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,.12);
+    transform: translateY(-2px);
+}
+
+/* Highlights */
+
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: -34px;
+    position: relative;
+}
+
+.highlight-card {
+    background: white;
+    padding: 22px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.highlight-card strong {
+    display: block;
+    font-size: 23px;
+    color: var(--navy);
+}
+
+.highlight-card span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* General sections */
+
+section {
+    padding: 65px 0 0;
+    scroll-margin-top: 80px;
+}
+
+.section-heading {
+    margin-bottom: 27px;
+}
+
+.section-label {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: 27px;
+    letter-spacing: -.5px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    max-width: 700px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 27px;
+    box-shadow: 0 5px 20px rgba(20,36,59,.025);
+}
+
+.summary-text {
+    font-size: 15px;
+    line-height: 1.95;
+    color: #526174;
+}
+
+/* Experience */
+
+.timeline {
+    border-left: 2px solid #d9e5f1;
+    margin-left: 8px;
+    padding-left: 27px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 7px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px #cbdced;
+}
+
+.job-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 17px;
+}
+
+.job-title {
+    color: var(--navy);
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.job-subtitle {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 650;
+    margin-top: 3px;
+}
+
+.job-date {
+    background: var(--blue-light);
+    color: #315e8c;
+    border-radius: 20px;
+    padding: 5px 11px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.job-location {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
 }
 
 ul {
-    padding-left: 18px;
+    padding-left: 19px;
 }
 
-.skills span {
-    display: inline-block;
-    background: #e3eaf2;
-    padding: 6px 10px;
-    margin: 4px;
+li {
+    padding-left: 3px;
+    margin-bottom: 9px;
+    font-size: 13px;
+    color: #58677a;
+    line-height: 1.8;
+}
+
+li::marker {
+    color: var(--blue);
+}
+
+/* Skills */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.skill-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 22px;
+}
+
+.skill-card h3 {
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 13px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tags span {
+    background: #edf3f9;
+    color: #365778;
+    border: 1px solid #e2ebf4;
+    padding: 5px 10px;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 11px;
+    font-weight: 600;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 40px;
+/* Project and credentials */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.info-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.info-card h3 {
+    color: var(--navy);
+    font-size: 16px;
+    margin-bottom: 9px;
+}
+
+.info-card p {
+    color: var(--muted);
     font-size: 13px;
-    color: #777;
+    line-height: 1.8;
+}
+
+.education-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.education-card strong {
+    color: var(--navy);
+    font-size: 15px;
+}
+
+.education-card span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.cert-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cert-list li {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cert-list li:last-child {
+    border-bottom: 0;
+}
+
+/* Contact */
+
+.contact-section {
+    margin-top: 65px;
+    background: var(--navy);
+    color: white;
+    padding: 50px 25px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.contact-section h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    color: #c7d6e5;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    color: white;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 6px;
+    padding: 9px 16px;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.contact-links a:hover {
+    background: rgba(255,255,255,.12);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 760px) {
+    .nav-inner {
+        padding: 13px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 65px 0 70px;
+    }
+
+    .highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid,
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding-top: 48px;
+    }
+
+    .job-card {
+        padding: 19px;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .highlights {
+        gap: 9px;
+    }
+
+    .highlight-card {
+        padding: 16px 8px;
+    }
+
+    .highlight-card strong {
+        font-size: 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- Navigation -->
+<nav>
+    <div class="container nav-inner">
+        <a href="#" class="brand">PREETY <span>AKANKSHA.</span></a>
 
-<header>
-    <h1>Preety Akanksha</h1>
-    <div class="subtitle">Data Engineer | Backend Developer | AWS Specialist</div>
-    <div class="contact">
-        +91 6202119227 | akankshapreety4545@gmail.com <br>
-        <a href="https://linkedin.com/in/preetyakanksha">LinkedIn</a> |
-        <a href="https://github.com/Preety2022">GitHub</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="eyebrow">Professional Portfolio · Software & Data Engineering</div>
+
+            <h1>Preety Akanksha</h1>
+
+            <h2>Python Backend Engineer | Senior Analyst</h2>
+
+            <p class="hero-description">
+                Building scalable backend applications, cloud-powered data platforms
+                and AI-driven solutions. Experienced in Python, FastAPI, AWS,
+                distributed ETL pipelines and RAG-based Generative AI.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#experience">Explore Experience</a>
+                <a class="btn btn-outline" href="#contact">Get in Touch</a>
+            </div>
+        </div>
     </div>
 </header>
 
-<section>
-<h2>Profile</h2>
-<p>
-Data Engineer and Python Backend Developer with 3.5+ years of experience building scalable data platforms,
-backend enhancements, and cloud pipelines on AWS. Skilled in Python, SQL, and API
-development with proven ability to design end-to-end architectures and deliver
-business impact through automation and analytics. Professional with a proven ability to collaborate with stakeholders, drive data-driven decisions,
-and deliver reliable solutions in Agile environments.
-</p>
-</section>
+<main class="container">
 
-<section>
-<h2>Experience</h2>
-<p><strong>Accenture | Data Engineer & Backend Developer</strong> (Oct 2022 – Present)</p>
-<ul>
-<li>Built a production-grade data platform (S3 → Glue → OpenSearch).</li>
-<li>Processed 2M+ documents for AI/ML applications.</li>
-<li>Developed FastAPI backend integrated with PostgreSQL (AWS RDS).</li>
-<li>Automated ETL pipelines reducing manual effort by 40%.</li>
-<li>Implemented AWS Lambda-based security automation.</li>
-<li>Optimized system performance and scalability.</li>
-<li>Delivered Tableau dashboards for business insights.</li>
-</ul>
-</section>
+<!-- Highlights -->
+<div class="highlights">
+    <div class="highlight-card">
+        <strong>4+</strong>
+        <span>Years of Experience</span>
+    </div>
 
-<section>
-<h2>Skills</h2>
-<div class="skills">
-<span>Python</span><span>SQL</span><span>FastAPI</span>
-<span>REST APIs</span><span>AWS</span><span>Glue</span>
-<span>S3</span><span>Lambda</span><span>PostgreSQL</span>
-<span>OpenSearch</span><span>Tableau</span>
-</div>
-</section>
+    <div class="highlight-card">
+        <strong>2M+</strong>
+        <span>Documents Processed</span>
+    </div>
 
-<section>
-<h2>Projects</h2>
-<ul>
-<li><strong>OpenSearch Data Platform:</strong> Scalable ingestion and indexing pipeline.</li>
-<li><strong>PCOS Detector:</strong> ML model using Python and Flask.</li>
-<li><strong>Student Information System:</strong> Full-stack web application.</li>
-</ul>
-</section>
+    <div class="highlight-card">
+        <strong>30–40%</strong>
+        <span>Manual Effort Reduction</span>
+    </div>
 
-<section>
-<h2>Achievements</h2>
-<ul>
-<li>Beacon Award (3x)</li>
-<li>WOW Award</li>
-<li>Google Cloud Certified Associate Cloud Engineer</li>
-<li>Agentic AI Certification</li>
-</ul>
-</section>
-
-<section>
-<h2>Education</h2>
-<p>B.Tech – Computer Science & Engineering (CGPA: 8.9/10)</p>
-</section>
-
-<div class="footer">
-    © 2026 Preety Akanksha
+    <div class="highlight-card">
+        <strong>3x</strong>
+        <span>Beacon Award Recipient</span>
+    </div>
 </div>
 
-</div>
+<!-- About -->
+<section id="about">
+    <div class="section-heading">
+        <div class="section-label">Introduction</div>
+        <h2>Professional Summary</h2>
+        <p>A blend of backend engineering, data engineering and applied AI experience.</p>
+    </div>
+
+    <div class="card">
+        <p class="summary-text">
+            Python Backend Engineer with 4+ years of experience, specializing in
+            Python, FastAPI, RESTful APIs, and AWS cloud services. Experienced in
+            building scalable microservices, developing secure backend applications,
+            and designing AWS Glue ETL pipelines for large-scale data processing.
+            Hands-on expertise in PostgreSQL, AWS S3, EC2, Lambda, OpenSearch,
+            and RAG-based GenAI solutions. Skilled in collaborating with
+            stakeholders, driving technical delivery, and improving operational
+            efficiency through automation.
+        </p>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+    <div class="section-heading">
+        <div class="section-label">Career Journey</div>
+        <h2>Professional Experience</h2>
+        <p>Career progression across business intelligence, cloud data engineering and backend development.</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="job-card">
+                <div class="job-top">
+                    <div>
+                        <div class="job-title">Accenture</div>
+                        <div class="job-subtitle">Data Engineering Senior Analyst | Python Backend and GenAI</div>
+                        <div class="job-location">Hyderabad & Bhubaneswar, India</div>
+                    </div>
+                    <span class="job-date">Mar 2026 – Present</span>
+                </div>
+
+                <ul>
+                    <li>Sole backend developer responsible for designing, developing, and maintaining enterprise microservices using Python and FastAPI for Life Sciences applications.</li>
+                    <li>Refactored a monolithic backend codebase into a modular microservices architecture, improving maintainability, scalability, service separation, and future enhancements.</li>
+                    <li>Implemented a Retrieval-Augmented Generation (RAG)-based conversational assistant for clinical trial data retrieval using OpenSearch vector search, semantic retrieval, and LLM-based response generation.</li>
+                    <li>Contributed to an end-to-end AI search architecture integrating Amazon S3, AWS Glue, OpenSearch, MLOps-managed document chunking, vectorization, embeddings, and vector indexing.</li>
+                    <li>Worked on Cortex Brain implementation, incrementally feeding application and repository context into a knowledge base accessible to developers and testers through Claude terminal.</li>
+                    <li>Managed AWS EC2 application deployments using automation scripts for service startup, shutdown, and production releases; performed troubleshooting and performance optimization using AWS CloudWatch.</li>
+                    <li>Automated backend workflows using AWS Lambda and AWS Secrets Manager, including automated secret rotation.</li>
+                    <li>Collaborated with Business Analysts and stakeholders on requirements gathering, Jira management, and Agile delivery; provided technical guidance and monitored two team members.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-card">
+                <div class="job-top">
+                    <div>
+                        <div class="job-title">Accenture</div>
+                        <div class="job-subtitle">Data Engineering Analyst | AWS and Python</div>
+                        <div class="job-location">Bhubaneswar, India</div>
+                    </div>
+                    <span class="job-date">Sep 2024 – Feb 2026</span>
+                </div>
+
+                <ul>
+                    <li>Developed and optimized Python-based distributed ETL pipelines using AWS Glue and Glue Studio for large-scale data ingestion, processing, transformation, and indexing.</li>
+                    <li>Built document ingestion pipelines processing 2M+ scientific documents through Amazon S3 and AWS Glue, generating structured datasets for analytics and AI/ML.</li>
+                    <li>Developed Python-based REST API ingestion workflows, including clinical trial data extraction, transformation, and integration with downstream data platforms.</li>
+                    <li>Managed AWS Glue jobs and integrated processed datasets with Amazon OpenSearch; collaborated with MLOps teams on data preparation and vectorization workflows.</li>
+                    <li>Automated data processing workflows using AWS Lambda and Amazon S3, contributing to a 30–40% reduction in manual operational effort.</li>
+                    <li>Administered Tableau Server for a multinational pharmaceutical client, managing user access, permissions, licensing, server configurations, and dashboard performance.</li>
+                    <li>Developed Tableau dashboards for business KPIs and automation metrics; recommended performance improvements and supported production releases.</li>
+                    <li>Managed AWS EC2 lifecycle activities, resolved client issues, coordinated with vendors and stakeholders, maintained Knowledge Base documentation, and conducted Tableau Server user training.</li>
+                    <li>Worked in Agile environments using Jira and ServiceNow, participating in sprint planning, daily stand-ups, issue tracking, release coordination, and documentation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-card">
+                <div class="job-top">
+                    <div>
+                        <div class="job-title">Accenture</div>
+                        <div class="job-subtitle">Data Engineering Associate | Tableau Development</div>
+                        <div class="job-location">Hyderabad, India</div>
+                    </div>
+                    <span class="job-date">Oct 2022 – Aug 2024</span>
+                </div>
+
+                <ul>
+                    <li>Developed and maintained Tableau dashboards and enterprise reporting solutions.</li>
+                    <li>Supported Tableau Server operations, including dashboard publishing, content management, user access, and troubleshooting reporting issues.</li>
+                    <li>Handled dashboard maintenance, enhancements, data visualization, and reporting accuracy to deliver actionable insights to stakeholders.</li>
+                    <li>Supported dashboard deployment and production activities, ensuring report availability and smooth user experience.</li>
+                    <li>Collaborated with cross-functional teams to understand reporting requirements, resolve dashboard issues, and deliver project milestones.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+    <div class="section-heading">
+        <div class="section-label">Technical Expertise</div>
+        <h2>Skills & Technologies</h2>
+        <p>Technologies and tools used across backend engineering, cloud infrastructure, data pipelines and AI solutions.</p>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <div class="tags">
+                <span>Python</span><span>SQL</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Backend Development</h3>
+            <div class="tags">
+                <span>FastAPI</span><span>RESTful APIs</span>
+                <span>Microservices</span><span>JWT Authentication</span>
+                <span>API Integration</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>AWS Cloud</h3>
+            <div class="tags">
+                <span>Amazon S3</span><span>AWS Glue</span>
+                <span>AWS Lambda</span><span>Amazon RDS</span>
+                <span>Amazon EC2</span><span>IAM</span>
+                <span>CloudWatch</span><span>Secrets Manager</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Databases & Search</h3>
+            <div class="tags">
+                <span>PostgreSQL</span><span>OpenSearch</span>
+                <span>Vector Search</span><span>Semantic Search</span>
+                <span>Indexing</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Generative AI</h3>
+            <div class="tags">
+                <span>Generative AI</span><span>LLMs</span>
+                <span>RAG</span><span>Embeddings</span>
+                <span>Prompt Engineering</span><span>AI-powered Search</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Data Engineering</h3>
+            <div class="tags">
+                <span>ETL Pipelines</span><span>Data Ingestion</span>
+                <span>Data Transformation</span>
+                <span>Distributed Processing</span>
+                <span>REST API Data Extraction</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Analytics & Visualization</h3>
+            <div class="tags">
+                <span>Tableau</span>
+                <span>Tableau Server Administration</span>
+                <span>KPI Reporting</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Tools & Methodologies</h3>
+            <div class="tags">
+                <span>Git</span><span>GitHub</span>
+                <span>Jira</span><span>ServiceNow</span>
+                <span>GitHub Copilot</span><span>Claude</span>
+                <span>Agile</span><span>Scrum</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <div class="section-heading">
+        <div class="section-label">Selected Work</div>
+        <h2>Personal Project</h2>
+        <p>A practical application of machine learning and Python development.</p>
+    </div>
+
+    <div class="two-column">
+        <div class="info-card">
+            <h3>PCOS Detector</h3>
+            <div class="tags" style="margin-bottom: 13px;">
+                <span>Python</span><span>Machine Learning</span>
+                <span>Flask</span><span>Scikit-learn</span>
+            </div>
+            <p>
+                Developed a machine learning model using Python, Pandas,
+                Matplotlib, and Scikit-learn to predict PCOS likelihood
+                from user inputs. Deployed the application using Flask.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>Professional Focus</h3>
+            <p>
+                Enterprise backend development, AWS-based data engineering,
+                microservices architecture, AI-powered search and
+                Retrieval-Augmented Generation solutions.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications -->
+<section id="certifications">
+    <div class="section-heading">
+        <div class="section-label">Recognition</div>
+        <h2>Achievements & Certifications</h2>
+    </div>
+
+    <div class="info-card">
+        <ul class="cert-list">
+            <li>Google Cloud Certified Associate Cloud Engineer.</li>
+            <li>Accenture Agentic AI Certification in collaboration with Stanford Human-Centered AI (HAI).</li>
+            <li>Beacon Award recipient (3x) for outstanding performance and contributions.</li>
+            <li>WOW Award recipient for client recognition, collaboration, and innovation.</li>
+            <li>Recognized for employee training and knowledge sharing.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+    <div class="section-heading">
+        <div class="section-label">Academic Background</div>
+        <h2>Education</h2>
+    </div>
+
+    <div class="info-card education-card">
+        <div>
+            <strong>Bachelor of Technology – Computer Science and Engineering</strong>
+            <p>Dr. APJ Abdul Kalam Women's Institute of Technology</p>
+        </div>
+
+        <div>
+            <span>2018 – 2022</span><br>
+            <strong>CGPA: 8.90 / 10</strong>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="contact-section">
+        <div class="section-label" style="color:#a9d4ef;">Connect</div>
+        <h2>Let's Connect Professionally</h2>
+        <p>
+            Open to conversations about Python Backend Engineering,
+            Data Engineering, AWS and Generative AI opportunities.
+        </p>
+
+        <div class="contact-links">
+            <a href="mailto:akankshapreety4545@gmail.com">Email Me</a>
+
+            <a href="https://linkedin.com/in/preetyakanksha/"
+               target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+            <a href="https://github.com/Preety2022"
+               target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    © 2026 Preety Akanksha. All rights reserved.
+    <br>
+    Python Backend Engineer | Senior Analyst
+</footer>
 
 </body>
 </html>
